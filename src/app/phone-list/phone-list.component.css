@@ -1,0 +1,78 @@
+.mat-table{
+  /* margin-left:10px; */
+  width: 95%;
+  margin: 0 auto;
+}
+
+
+.center{
+  margin: 10px auto;
+  text-align: center;
+  font-size: 200%;
+  font-weight: 300;
+  letter-spacing: 3px;
+  background-color: #e67e22;
+  width: 50%;
+  max-width: 280px;
+  min-width: 270px;
+  border-radius: 10px;
+  color: white;
+}
+.center1{
+  margin: 10px auto;
+  text-align: center;
+  font-size: 200%;
+  font-weight: 300;
+  letter-spacing: 3px;
+  width: 50%;
+  max-width: 280px;
+  border-radius: 10px;
+  color: white;
+}
+td.mat-cell{
+  padding: 7px 5px;
+  font-size: 120%;
+}
+td.body{
+  font-size: 200%
+}
+th.mat-header-cell{
+  font-size: 130%;
+}
+table{
+  border: 3px solid #e67e22;
+}
+.number-columns{
+  margin: 15% 2% 0 0;
+  width: 90%;
+}
+.col-md-3{
+  padding: 0px;
+}
+.mat-list-item{
+  font-size: 120%;
+  letter-spacing: 3px;
+  font-weight: 300;
+}
+.mat-divider{
+  border-top: 1px solid #e67e22;
+}
+.mat-fab{
+  margin: 0 auto;
+  margin-left: 20px;
+  background-color: #e67e22;
+}
+.spinner ::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
+  stroke: #e67e22;
+}
+.spinner{
+  width: 50px;
+  margin-left: 45%;
+}
+.shift-menu{
+  width:80%;
+}
+.mat-button-toggle-group{
+  margin-left:50%;
+  margin-top:5px;
+}

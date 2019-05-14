@@ -1,0 +1,45 @@
+<div class="container-card">
+        <div class="row">
+          <div class="col-md-3 col-sm-6 col-xs-12 " *ngFor="let item of data">
+              <a href="#" class="card" [routerLink]="[ '/phone', item.number ]">
+                  <img class="card-img-top" src="https://pgcpsmess.files.wordpress.com/2018/07/0001146-flagge-usa.gif" alt="Card image cap">
+                  <div class="card-body">
+                    <h4 class="card-title">{{item.number}}</h4>
+                    <h6 class="card-subtitle mb-2 text-muted">{{item.location}}</h6>
+                    <p class="card-text active-card">{{item.status}}</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                  </div>
+                </a>
+          </div>
+
+          <div class="col-md-3 col-sm-6 col-xs-12">
+                <a href="#" class="card" >
+                    <img class="card-img-top" src="https://pgcpsmess.files.wordpress.com/2018/07/0001146-flagge-usa.gif" alt="Card image cap">
+                    <div class="card-body">
+                      <h4 class="card-title">Your Choice</h4>
+                      <h6 class="card-subtitle mb-2 text-muted">Request the number you want and we'll try our best</h6>
+                      <p class="card-text"><small class="text-muted">Demand Please! we have variety to offer!!</small></p>
+                    </div>
+                  </a>
+            </div>
+          
+        </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-4">
+                <i class="icon-card material-icons">message</i>
+              <h2>SEND</h2>
+              <p>Send Sms in any part of the world! your are beyond limits. this virtual platform provides you with innovative Functions</p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+                <i class="icon-card material-icons">call</i>
+              <h2>RECIEVE</h2>
+              <p>Recieve Sms in any part of the world! your are beyond limits. this virtual platform provides you with innovative Functions</p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+                <i class="icon-card material-icons">volume_up</i>
+              <h2>LISTEN</h2>
+              <p>Listen in any part of the world! your are beyond limits. this virtual platform provides you with innovative Functions.</p>
+            </div><!-- /.col-lg-4 -->
+          </div>

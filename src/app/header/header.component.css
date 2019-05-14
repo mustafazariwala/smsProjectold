@@ -1,0 +1,111 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .space{
+      padding: 0 14px;
+  }
+  ul{
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+  }
+
+  .mat-menu-item {
+    color: blue !important;
+  }
+  
+  button.mat-menu-item{
+      background-color: white;
+  }
+  
+  button.mat-menu-item:hover {
+      background-color: blue;
+      color: #fff !important;
+  }
+  navbar{
+      background-color: transparent;
+  }
+  .main-screen{
+      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(https://media.glamour.com/photos/5cc366f64e50c6305d589218/16:9/w_1280%2Cc_limit/GettyImages-951534710.jpg);
+      background-size: cover;
+      height: 75vh;
+      width: 100%;
+
+  }
+  .navbar-nav{
+      margin-right: 20px;
+  }
+  .nav-link{
+      font-weight: 200;
+      font-size: 150%;
+      letter-spacing: 2px;
+      margin: 0 10px;
+      color: white;
+  }
+  .nav-link :hover{
+      background-color: black;
+      text-transform: uppercase;
+  }
+
+  .navbar-nav > li > a:hover{
+      border: 2px solid #e67e22;
+      border-radius: 10px;
+  }
+ .main-text{
+    margin-top: 2%;
+    margin-left: 10%;
+    width: 300px;
+  }
+  .main-text-h1{
+      margin: 0 auto;
+      text-align: center;
+      font-size: 300%;
+      font-weight: 200;
+      letter-spacing: 5px;
+      color: white;
+
+  }
+  .main-text-h4{
+        text-align: center;
+        margin:0 auto;
+        color: white;
+        font-size: 200%;
+        font-weight: 200;
+        letter-spacing: 5px;
+        
+    }
+    .main-text-button1{
+        width: 140px;
+        height: 50px;
+        background-color: #e67e22;
+        padding-top: 10px;
+        font-size: 120%;
+        color: white;
+    }
+    .button-center{
+        padding: 0 25%;
+    }
+    
+    .display-4{
+    color: #fffff4;
+    }
+    .lead{
+    color:#fffff2;
+    }
+    .material-icons{
+        color: white;
+        margin-right: 3px;
+    }
+    .private{
+        color:#e67e22;
+        margin-right: 3px;
+
+    }
+    .my-1{
+        margin-top:1.25rem;
+    }
+
+    .private{
+    }

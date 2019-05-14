@@ -1,0 +1,9 @@
+<form (submit)="onAddPost(postForm)" #postForm="ngForm">
+  <mat-form-field>
+    <input type="text" matInput name="number" ngModel placeholder="Number">
+  </mat-form-field>
+  <mat-form-field>
+      <input type="text" matInput name="location" ngModel placeholder="Location">
+  </mat-form-field>
+  <button mat-button type="submit">Submit</button>
+</form>
