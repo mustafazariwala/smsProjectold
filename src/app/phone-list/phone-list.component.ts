@@ -77,3 +77,5 @@ export class PhoneListComponent implements OnInit {
   displayedColumns : string[] = ['from', 'body', 'time']
 
 }
+
+

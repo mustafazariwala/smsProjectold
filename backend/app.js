@@ -22,8 +22,13 @@ app.use(bodyParser.urlencoded({ extended: false }))
  
 app.use(bodyParser.json())
 
+app.use(express.static(__dirname + "/dist/sms-project.html"))
+
 const allData = []
 
+app.get('/' , (req,res)=> {
+    res.send('hello world')
+})
 
 
 app.get('/api/:phone', (req, res) => {
