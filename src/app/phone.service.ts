@@ -15,7 +15,7 @@ export class PhoneService {
   ELEMENT_DATA;
 
   getPhone(){
-    this.http.get('http://localhost:3000/api/numbers')
+    this.http.get('/api/numbers')
     .subscribe(data =>{
       this.ELEMENT_DATA = data
       console.log(data)
@@ -26,13 +26,13 @@ export class PhoneService {
   createPhone(number: string, location: string){
     const data = {number: number, location: location, status: 'Active'}
     console.log(data)
-    this.http.post('http://localhost:3000/create', data).subscribe(response => {
+    this.http.post('/create', data).subscribe(response => {
       console.log(response)
     })
   }
 
   getNumber(){
-    this.http.get('http://localhost:3000/phoneList').subscribe(response => {
+    this.http.get('/phoneList').subscribe(response => {
       this.numberUpdated.next(response)
     })
 
