@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { PhoneService } from '../phone.service';
-import { timer } from 'rxjs';
+import {  Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-phone-list',
@@ -11,7 +11,7 @@ import { timer } from 'rxjs';
 
 
 
-export class PhoneListComponent implements OnInit {
+export class PhoneListComponent implements OnInit, OnDestroy {
 
   constructor(public route: ActivatedRoute, private phoneService: PhoneService) { }
 
@@ -22,12 +22,15 @@ export class PhoneListComponent implements OnInit {
 
   phoneList;
 
-  number = 5;
+  subscription1 = new Subscription;
+
+  number = 0;
 
 
   phoneGetter = function () {
-    this.Element_Data =  this.phoneService.getPhone()
-    this.phoneService.getPhoneUpdateListener().subscribe( data => {
+    this.Element_Data =  this.phoneService.getPhone(this.currentPhone)
+    this.subscription1 = this.phoneService.getPhoneUpdateListener().subscribe( data => {
+      this.number = 600;
       this.Element_Data = data
       console.log(this.Element_Data)
       this.dataSource = this.Element_Data;
@@ -36,12 +39,27 @@ export class PhoneListComponent implements OnInit {
   }
 
   onReload(){
-    console.log('Hi')
+    this.phoneGetter()
+  }
+
+  onSideClick(phoneNumber){
+    this.subscription1.unsubscribe()
+    this.Element_Data = null;
+    this.currentPhone = phoneNumber
+    this.phoneService.getPhone(phoneNumber)
+    this.phoneService.getPhoneUpdateListener().subscribe( data => {
+      this.number = 600;
+      this.Element_Data = data
+      console.log(this.Element_Data)
+      this.dataSource = this.Element_Data;
+
+    })
+    
   }
 
   ngOnInit() {
    
-    this.phoneGetter()
+    
     
 
 
@@ -51,11 +69,16 @@ export class PhoneListComponent implements OnInit {
       console.log(this.currentPhone)
     })
 
+    this.phoneGetter()
+
     this.phoneService.getNumber()
     this.phoneService.getNumberUpdateListener().subscribe(response=> {
       this.phoneList = response
       
     })
+
+
+    this.timer()
 
   
   
@@ -64,11 +87,10 @@ export class PhoneListComponent implements OnInit {
   timer = function () {
     const t = setInterval(() => {
       this.number--
-      console.log(this.number)
       if(this.number === 0){
-        this.number = 5;
         clearInterval(t)
-        this.phoneGetter()       
+        this.phoneGetter()
+        this.timer()    
       }
     },1000)
   }
@@ -76,6 +98,20 @@ export class PhoneListComponent implements OnInit {
 
   displayedColumns : string[] = ['from', 'body', 'time']
 
+  onCopy(phonenumber){
+    console.log(phonenumber)
+    phonenumber.select()
+    document.execCommand('copy');
+    phonenumber.setSelectionRange(0, 0);
+
+  }
+
+
+
+  ngOnDestroy() {
+    
+    this.subscription1.unsubscribe()
+
+  }
+
 }
-
-

@@ -11,8 +11,16 @@ export class UploadFormComponent implements OnInit {
 
   constructor(private phoneService: PhoneService) { }
 
+  selectedLocation: string;
+
+  countries = [
+    {name: 'United States', abb: 'US'},
+    {name: 'Canada', abb: 'CA'}
+  ];
+  
+
   onAddPost(form: NgForm){
-    this.phoneService.createPhone(form.value.number, form.value.location)
+    this.phoneService.createPhone(form.value.number, form.value.location, form.value.shortCode)
   }
 
   

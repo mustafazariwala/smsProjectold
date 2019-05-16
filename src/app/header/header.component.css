@@ -28,7 +28,7 @@
       background-color: transparent;
   }
   .main-screen{
-      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(https://media.glamour.com/photos/5cc366f64e50c6305d589218/16:9/w_1280%2Cc_limit/GettyImages-951534710.jpg);
+      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../../assets/background-image.jpg');
       background-size: cover;
       height: 75vh;
       width: 100%;
@@ -106,6 +106,9 @@
     .my-1{
         margin-top:1.25rem;
     }
+    .logo{
+        height: 100%;
+        width: 200px;
+        margin-top: 5px;
 
-    .private{
     }

@@ -23,7 +23,7 @@
 
 <div class="row">
   
-  <div class="col-md-9">
+  <div class="col-lg-9 col-md-10">
     <div>
     </div>
     <p class="center1">
@@ -68,11 +68,10 @@
 
   </div>
 
-  <div class="col-md-3 d-none d-sm-block d-md-block">
+  <div class="col-lg-3 col-md-2 d-none d-sm-block d-md-block">
       <mat-list class="number-columns">
           <div class="phone-list"*ngFor="let item of phoneList">
-          <mat-list-item ><img src="https://img.icons8.com/color/48/000000/usa.png">{{item.number}}</mat-list-item>
-          <mat-divider ></mat-divider>
+          <mat-list-item ><img class="phoneListImage" src="assets/flags/{{item.shortCode}}.png"> <a class="sideLink" (click)="onSideClick(item.number)"> {{item.number}} </a> </mat-list-item><mat-divider ></mat-divider> 
           </div>
         </mat-list>
 

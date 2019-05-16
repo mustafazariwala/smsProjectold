@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-const path = require('path')
 const mongoose = require('mongoose')
 const moment = require('moment');
 const numbers = require('./models/numbers')
@@ -22,17 +21,14 @@ app.use(bodyParser.urlencoded({ extended: false }))
  
 app.use(bodyParser.json())
 
-app.use(express.static(__dirname + "/dist/sms-project.html"))
-
 const allData = []
 
-app.get('/' , (req,res)=> {
-    res.send('hello world')
-})
-
-
 app.get('/api/:phone', (req, res) => {
-    client.messages.list({limit: 20})
+    console.log(req.params.phone)
+    client.messages.list({
+        to: req.params.phone,
+        limit: 20
+    })
     .then(messages => {
 
         let inbound = messages.filter(messages =>  messages.direction === 'inbound')
@@ -51,7 +47,19 @@ app.get('/api/:phone', (req, res) => {
 
 app.get('/phonelist', (req, res)=> {
     const numberFind = numbers.find()
-    numberFind.then(data => res.status(200).send(data))
+    numberFind.then(data => {
+        let result = data.map(a => {
+            return {
+                number: a.number,
+                location: a.location,
+                shortCode: a.shortCode,
+                status: a.status,
+                createdAt: moment.utc(a.createdAt).fromNow()
+            }
+        })
+
+        res.status(200).send(result)
+    })
 })
 
 
@@ -60,7 +68,9 @@ app.post('/create', (req, res, next) => {
     const number = new numbers({
         number: req.body.number,
         location: req.body.location,
-        status: req.body.status
+        shortCode: req.body.shortCode,
+        status: req.body.status,
+        createdAt: new Date()
      })
      number.save().then(data => console.log(data))
      res.status(200).json({

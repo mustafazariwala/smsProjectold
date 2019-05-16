@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MatInputModule,  MatIconModule, MatButtonModule, MatMenuModule, MatCardModule, MatTableModule, MatDividerModule, MatListModule, MatProgressSpinnerModule, MatButtonToggleModule } from '@angular/material';
+import { MatInputModule,  MatIconModule, MatButtonModule, MatMenuModule, MatCardModule, MatTableModule, MatDividerModule, MatListModule, MatProgressSpinnerModule, MatButtonToggleModule, MatSelectModule } from '@angular/material';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HeaderComponent } from './header/header.component';
@@ -45,7 +45,8 @@ import { FormsModule } from '@angular/forms';
     MatDividerModule,
     MatListModule,
     MatProgressSpinnerModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

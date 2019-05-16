@@ -12,11 +12,16 @@ export class PhoneCardComponent implements OnInit {
   constructor(private phoneService: PhoneService) { }
 
   data ;
+  isLoading = false;
 
   ngOnInit() {
+
     this.phoneService.getNumber()
     this.phoneService.getNumberUpdateListener().subscribe(response=> {
       this.data = response
+      if(response){
+        this.isLoading = true
+      }
       console.log(this.data)
     })  
   }

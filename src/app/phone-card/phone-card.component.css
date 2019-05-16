@@ -46,3 +46,27 @@ mb-2{
   color: white;
   border-radius: 50%;
 }
+.spinner{
+  margin:0 auto;
+}
+
+.spinner ::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
+  stroke: #e67e22;
+}
+.imessage{
+  width: 50%;
+  margin-left: 25%;
+}
+.mat-row{
+  width: 1550px;
+}
+.mat-header-cell:first-child,.mat-cell:first-child{
+  flex:5%;
+  width:5%;
+}
+.mat-header-cell:nth-child(2),.mat-cell:nth-child(2){
+  flex:85%;
+}
+.mat-header-cell:last-child,.mat-cell:last-child{
+  flex:10%
+}
